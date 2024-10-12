@@ -1,36 +1,41 @@
-*{
+* {
     box-sizing: border-box;
 }
 
-img{
+.login-page-container {
+    height: 100vh !important;
+    padding-top: 4rem !important;
+}
+
+.img-bg {
     width: 65%;
     border-radius: 2rem;
 }
 
-.img-responsive{
+.img-responsive {
     border-radius: 0;
     height: 8rem;
     width: auto;
     position: absolute;
 }
 
-.desarrollamos{
+.desarrollamos {
     bottom: 8rem;
     right: -0.5rem;
 }
 
-.diseniamos{
+.diseniamos {
     top: 8rem;
     left: -0.5rem;
 }
 
-.login-section{
+.login-section {
     width: 35%;
 }
 
 
 
-.form-container{
+.form-container {
     padding: 1rem;
     height: 30rem;
     width: 30rem;
@@ -39,7 +44,7 @@ img{
     background-color: #fff;
 }
 
-.form-control{
+.form-control {
     background-color: #fff;
     border-bottom: 4px solid var(--color-primary);
     border-right: 4px solid var(--color-primary);
@@ -48,11 +53,11 @@ img{
     padding: 1rem !important;
 }
 
-.form-control:focus{
+.form-control:focus {
     box-shadow: none;
 }
 
-.btn{
+.btn {
     background-color: var(--color-primary);
     color: #fff;
     border: none;
@@ -61,60 +66,77 @@ img{
     transition: background-color 0.3s ease;
 }
 
-.btn:hover{
+.btn:hover {
     background-color: var(--color-blue-accent);
     color: #fff;
 }
 
-.links{
+.links {
     text-decoration: none;
     color: rgba(0, 0, 0, 0.699);
 }
 
-.links:hover{
+.links:hover {
     color: var(--color-primary);
 }
 
 /* Ajustes para pantallas medianas y grandes */
-@media(max-width:1200px){
-    .form-container{     
-        height: fit-content;
-        width: fit-content;
+@media(max-width:1200px) {
+
+    .login-page-container {
+        flex-direction: column;
+        /* Cambiar a disposición vertical */
+        justify-content: center;
+        /* Centrar el contenido verticalmente */
+        align-items: center;
+        /* Centrar el contenido horizontalmente */
+        padding: 2rem;
     }
 
-    .inputs-container{
+    .login-section {
+        width: 60% !important;
+        height: 75% !important;
+    }
+
+    .form-container {
+        width: 100%;
+        height: fit-content;
+        padding: 3rem 0 !important;
+    }
+
+    .inputs-container {
         width: 75%;
     }
 
-    h2{
+    h2 {
         font-size: larger;
     }
 
-    label{
+    label {
         font-size: .8rem;
     }
 
-    .form-control{
+    .form-control {
         width: 100% !important;
         height: 2rem !important;
     }
 }
 
 /* Ajustes para pantallas móviles y tabletas */
-@media(max-width:768px){
+@media(max-width:768px) {
     .login-section {
-        width: 100%;
-        padding: 1rem;
+        width: 100% !important;
+        padding: 2rem 0 !important;
     }
 
-    .form-container{
+    .form-container {
         width: 100%;
         padding: 1.5rem;
         height: auto;
         box-shadow: 0px 0px 2px 2px rgba(19, 18, 18, 0.315);
     }
 
-    img {
+    .img-bg {
         display: none;
     }
 
@@ -142,7 +164,4 @@ img{
         gap: 1rem;
     }
 
-    .desarrollamos, .diseniamos {
-        display: block;
-    }
 }

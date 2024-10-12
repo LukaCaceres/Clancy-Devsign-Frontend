@@ -69,7 +69,7 @@ const RegistroPage = () => {
         }
     }
     return (
-        <div className="d-flex flex-column flex-xl-row justify-content-center align-items-center gap-2 vh-100 vw-100 p-4 overflow-hidden">
+        <div className="login-page-container d-flex flex-column flex-xl-row justify-content-center align-items-center gap-2 h-100 w-100 px-4">
 
             <section className="registro-section d-flex justify-content-center align-items-center">
                 <div className="form-container-registro d-flex flex-column justify-content-evenly align-items-center text-black">
@@ -160,7 +160,7 @@ const RegistroPage = () => {
                 </div>
 
             </section>
-            <img src="https://i.postimg.cc/1zgjR6Sx/registro.jpg" alt="Imagen de fondo" className='d-none d-xl-block' />
+            <img src="https://i.postimg.cc/1zgjR6Sx/registro.jpg" alt="Imagen de fondo" className='d-none d-xl-block img-bg' />
 
         </div>
     );

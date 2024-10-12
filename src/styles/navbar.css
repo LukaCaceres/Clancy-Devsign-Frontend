@@ -1,0 +1,141 @@
+.navbar-container{
+    color: #000 !important;
+    height: 4rem !important;
+    border-bottom: 1px solid #00000027 !important;
+}
+
+.logo-container{
+    text-decoration: none !important;
+    color: #000 !important;
+    min-width: fit-content !important;
+}
+
+.logo-clancy{
+    height: 3rem !important;
+    width: auto !important;
+}
+.logo-user{
+    cursor: pointer !important;
+    height: 2.7rem;
+    width: 2.7rem;
+    border-radius: 0;
+}
+
+
+.nav-link {
+    position: relative;
+    display: inline-block;
+    color: #000; 
+    text-decoration: none;
+    padding: .6rem 1.2rem;
+    transition: color 0.3s ease-in-out; 
+    font-weight: 500;
+}
+
+
+.nav-link::before {
+    content: '';
+    position: absolute;
+    bottom: 0%;
+    left: 1%;
+    width: 100%;
+    height: 3px; 
+    background: linear-gradient(90deg, var(--color-primary), var(--color-tertiary)); 
+    border-radius: 1rem;
+    transform: scaleX(0); 
+    transform-origin: right; 
+    transition: transform 0.4s ease-in-out; 
+}
+
+
+.nav-link:hover::before {
+    transform: scaleX(1); 
+    transform-origin: left; 
+}
+
+
+.nl-active::before {
+    transform: scaleX(1);
+    transform-origin: left; 
+}
+
+
+.nl-active{
+    font-style: italic;   
+}
+
+.user-dropdown-container {
+    position: relative; 
+}
+
+
+.dropdown {
+    position: absolute;
+    top: 4rem; 
+    right: 0; 
+    background-color: var(--color-primary);
+    border: 1px solid #00000027 !important;
+    border-radius: 1rem !important;
+    padding: 1rem !important;
+    z-index: 3000 !important;
+    display: none; 
+    flex-direction: column;
+    gap: 0.5rem !important;
+    min-width: 10rem; 
+}
+
+.dropdown-item {
+    text-decoration: none !important;
+    color: #0000009f;
+    transition: background-color 0.3s ease;
+    cursor:  pointer !important;
+}
+
+.dropdown-item:hover {
+    color: #000;
+}
+
+.badge-dropdown{
+    background-color: var(--color-tertiary);
+    font-size: 1.2rem !important;
+    height: 1.5rem !important;
+    width: 1.7rem !important;
+}
+
+.hamburger-icon{
+    height: 2rem !important;
+    width: auto !important;
+}
+
+@media(max-width:1200px){
+    
+    .no-border{
+        border-bottom: 0px solid transparent !important;
+    }
+
+    .hamburger-dropdown{
+        left: 0 !important;
+        border-bottom: 1px solid #0000003a !important;
+        border-bottom-left-radius: 1rem  !important;
+        border-bottom-right-radius: 1rem  !important;
+    }
+
+    .badge-dropdown{
+        width: 1.8rem !important;
+    }
+
+    .nl-inactive::before {
+        transform: scaleX(0); 
+        transform-origin: left; 
+    }
+
+    .nl-active::before{
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+
+    .dropdown-item{
+        text-align: end;
+        color: #000;
+    }
+}
