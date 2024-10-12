@@ -1,0 +1,148 @@
+*{
+    box-sizing: border-box;
+}
+
+img{
+    width: 65%;
+    border-radius: 2rem;
+}
+
+.img-responsive{
+    border-radius: 0;
+    height: 8rem;
+    width: auto;
+    position: absolute;
+}
+
+.desarrollamos{
+    bottom: 8rem;
+    right: -0.5rem;
+}
+
+.diseniamos{
+    top: 8rem;
+    left: -0.5rem;
+}
+
+.login-section{
+    width: 35%;
+}
+
+
+
+.form-container{
+    padding: 1rem;
+    height: 30rem;
+    width: 30rem;
+    box-shadow: 0px 0px 2px 1px rgba(19, 18, 18, 0.315);
+    border-radius: 2rem;
+    background-color: #fff;
+}
+
+.form-control{
+    background-color: #fff;
+    border-bottom: 4px solid var(--color-primary);
+    border-right: 4px solid var(--color-primary);
+    border-radius: .8rem;
+    height: 2.5rem;
+    padding: 1rem !important;
+}
+
+.form-control:focus{
+    box-shadow: none;
+}
+
+.btn{
+    background-color: var(--color-primary);
+    color: #fff;
+    border: none;
+    border-radius: .8rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover{
+    background-color: var(--color-blue-accent);
+    color: #fff;
+}
+
+.links{
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.699);
+}
+
+.links:hover{
+    color: var(--color-primary);
+}
+
+/* Ajustes para pantallas medianas y grandes */
+@media(max-width:1200px){
+    .form-container{     
+        height: fit-content;
+        width: fit-content;
+    }
+
+    .inputs-container{
+        width: 75%;
+    }
+
+    h2{
+        font-size: larger;
+    }
+
+    label{
+        font-size: .8rem;
+    }
+
+    .form-control{
+        width: 100% !important;
+        height: 2rem !important;
+    }
+}
+
+/* Ajustes para pantallas móviles y tabletas */
+@media(max-width:768px){
+    .login-section {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .form-container{
+        width: 100%;
+        padding: 1.5rem;
+        height: auto;
+        box-shadow: 0px 0px 2px 2px rgba(19, 18, 18, 0.315);
+    }
+
+    img {
+        display: none;
+    }
+
+    .form-control {
+        width: 100% !important;
+        height: 2.5rem !important;
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    label {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        font-size: 1rem;
+        height: 2.5rem;
+    }
+
+    .links-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .desarrollamos, .diseniamos {
+        display: block;
+    }
+}

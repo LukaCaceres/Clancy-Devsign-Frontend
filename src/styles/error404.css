@@ -1,0 +1,25 @@
+.bg-container {
+    background: #a8c0ff;
+    background: -webkit-linear-gradient(to right, #3f2b96, #a8c0ff);   
+    background: linear-gradient(to right, #3f2b96, #a8c0ff);   
+}
+
+.error-container {
+    background-color: #fff;
+    border-radius: 2rem;
+    padding: 1rem;
+    height: 20rem;
+    width: 30rem;
+}
+
+.btn-error{
+    text-align: center;
+}
+
+@media(max-width:767px) {
+    .error-container{
+        width: 80% !important;
+        height: 20rem !important;
+        margin: 0 auto !important;
+    }
+}

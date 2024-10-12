@@ -1,0 +1,119 @@
+.registro-section {
+    width: 35%;
+}
+
+.form-container-registro {
+    padding: 1rem;
+    height: 35rem;
+    width: 30rem;
+    box-shadow: 0px 0px 2px 1px rgba(19, 18, 18, 0.315);
+    border-radius: 2rem;
+    background-color: #fff;
+}
+
+.link{
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.699);
+}
+
+.link:hover {
+    color: var(--color-accent)
+}
+
+.input-registro {
+    background-color: #fff;
+    border-bottom: 4px solid var(--color-tertiary);
+    border-right: 4px solid var(--color-tertiary);
+    border-radius: .8rem;
+    padding: 1rem !important;
+}
+
+.input-registro:focus {
+    box-shadow: none;
+    border: 1px solid var(--color-tertiary);
+    border-bottom: 4px solid var(--color-tertiary);
+    border-right: 4px solid var(--color-tertiary);
+}
+
+.btn-registro {
+    background-color: var(--color-tertiary);
+    color: #fff;
+    border: none;
+    border-radius: .8rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: larger !important;
+    padding: .2rem !important;
+}
+
+.btn-registro:hover {
+    background-color: var(--color-accent);
+    color: #fff;
+}
+/* Ajustes para pantallas medianas y grandes */
+@media(max-width:1200px){
+    .form-container-registro{     
+        height: fit-content;
+        width: fit-content;
+    }
+
+    .inputs-container-registro{
+        width: 75%;
+    }
+
+    h2{
+        font-size: larger;
+    }
+
+    label{
+        font-size: .8rem;
+    }
+
+    .input-registro{
+        width: 100% !important;
+        height: 2rem !important;
+    }
+}
+
+/* Ajustes para pantallas móviles y tabletas */
+@media(max-width:768px){
+    .registro-section {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .form-container-registro{
+        width: 100%;
+        padding: 1.5rem;
+        height: auto;
+        box-shadow: 0px 0px 2px 2px rgba(19, 18, 18, 0.315);
+    }
+
+    img {
+        display: none;
+    }
+
+    .input-registro {
+        width: 100% !important;
+        height: 2.5rem !important;
+        font-size: 1rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    label {
+        font-size: 0.9rem;
+    }
+
+    .btn-registro {
+        font-size: 1rem !important;
+        height: 2.5rem !important;
+    }
+
+
+    .desarrollamos, .diseniamos {
+        display: block;
+    }
+}
