@@ -113,12 +113,14 @@ const NavbarComponent = () => {
         <>
             <nav className={`navbar-container bg-light fs-6 d-flex justify-content-between align-items-center px-4 w-100 ${burgerVisibility ? 'no-border' : ''}`}>
                 <Link className="logo-container d-flex align-items-center">
-                    <img src="src/assets/images/clancy-logo.png" alt="clany devsign" className='logo-clancy' />
+                    <img src="src/assets/images/clancy-logo.webp" alt="clany devsign" className='logo-clancy' />
                     <p className='fw-semibold my-0 ms-2 clancy-p'>Clany Devsign</p>
                 </Link>
 
-                <img src="src/assets/images/hamburger-icon.png" alt="Icono Hamburguesa" className='hamburger-icon d-xl-none' onClick={toggleHamburger} />
-
+                {/* Mobile */}
+                <div className="hamburger-container">
+                    <img src="src/assets/images/hamburger-icon.webp" alt="Icono Hamburguesa" className='hamburger-icon d-xl-none' onClick={toggleHamburger} />
+                </div>
                 {(burgerVisibility) ? (<div className="hamburger-dropdown d-xl-none d-flex flex-column justify-content-between align-items-center position-absolute top-100 bg-light w-100 px-4">
                     <form onSubmit={handleSearchSubmit} className="w-100">
                         <input
@@ -190,13 +192,11 @@ const NavbarComponent = () => {
                                 </>
                             )}
                         </div>
-
                     </div>
-
                 </div>) : ''}
 
-
-                <div className="d-none d-xl-flex nav-links-continer justify-content-center gap-4">
+                {/* Desktop */}
+                <div className="d-none d-xl-flex nav-links-container justify-content-center gap-4">
                     {navigation.map((item) => (
                         <NavLink
                             key={item.name}
@@ -209,64 +209,68 @@ const NavbarComponent = () => {
                         </NavLink>
                     ))}
                 </div>
-                <div className="user-dropdown-container position-relative d-none d-xl-inline-block" ref={dropdownRef}>
-                    <div className="user-search-container d-flex align-items-center gap-2">
+                <div className="user-search-dropdown-container d-flex justify-content-end">
 
-                        <form onSubmit={handleSearchSubmit} className="d-flex">
-                            <input
-                                type="search"
-                                name="buscar"
-                                aria-label='Buscar un producto en la tienda.'
-                                placeholder='Buscar...'
-                                value={searchTerm}
-                                onChange={handleSearchChange}
-                                className='form-control'
-                                maxLength='20'
-                                minLength='1'
-                                autoComplete="off"
+
+                    <div className="user-dropdown-container position-relative d-none d-xl-inline-block" ref={dropdownRef}>
+                        <div className="user-search-container d-flex align-items-center gap-2">
+
+                            <form onSubmit={handleSearchSubmit} className="d-flex">
+                                <input
+                                    type="search"
+                                    name="buscar"
+                                    aria-label='Buscar un producto en la tienda.'
+                                    placeholder='Buscar...'
+                                    value={searchTerm}
+                                    onChange={handleSearchChange}
+                                    className='form-control'
+                                    maxLength='20'
+                                    minLength='1'
+                                    autoComplete="off"
+                                />
+                            </form>
+
+
+                            <img
+                                src="src/assets/images/user-logo.webp"
+                                alt="icono de usuario"
+                                className='logo-user '
+                                onClick={toggleDropdown}
                             />
-                        </form>
+                        </div>
 
 
-                        <img
-                            src="src/assets/images/user-logo.png"
-                            alt="icono de usuario"
-                            className='logo-user '
-                            onClick={toggleDropdown}
-                        />
-                    </div>
-
-
-                    <div className={`dropdown d-none  ${visibility ? 'd-xl-flex' : ''}`}>
-                        {token ? (
-                            <>
-                                {userNavLog.map((item) => (
-                                    <div className="link-badge-container d-flex" key={item.name}>
-                                        <NavLink to={item.to} className="dropdown-item">
+                        <div className={`dropdown d-none  ${visibility ? 'd-xl-flex' : ''}`}>
+                            {token ? (
+                                <>
+                                    {userNavLog.map((item) => (
+                                        <div className="link-badge-container d-flex" key={item.name}>
+                                            <NavLink to={item.to} className="dropdown-item">
+                                                {item.name}
+                                            </NavLink>
+                                            {item.badge ? ((item.name === 'Carrito') ? <p className='badge-dropdown rounded-circle d-flex align-items-center justify-content-center'>{carritoCount}</p> : <p className='badge-dropdown rounded-circle d-flex align-items-center justify-content-center'>{favoritosCount}</p>) : ''}
+                                        </div>
+                                    ))}
+                                    <p
+                                        className="dropdown-item"
+                                        onClick={() => {
+                                            localStorage.removeItem('token');
+                                            window.location.reload();
+                                        }}
+                                    >
+                                        Cerrar Sesión
+                                    </p>
+                                </>
+                            ) : (
+                                <>
+                                    {userNav.map((item) => (
+                                        <NavLink key={item.name} to={item.to} className="dropdown-item">
                                             {item.name}
                                         </NavLink>
-                                        {item.badge ? ((item.name === 'Carrito') ? <p className='badge-dropdown rounded-circle d-flex align-items-center justify-content-center'>{carritoCount}</p> : <p className='badge-dropdown rounded-circle d-flex align-items-center justify-content-center'>{favoritosCount}</p>) : ''}
-                                    </div>
-                                ))}
-                                <p
-                                    className="dropdown-item"
-                                    onClick={() => {
-                                        localStorage.removeItem('token');
-                                        window.location.reload();
-                                    }}
-                                >
-                                    Cerrar Sesión
-                                </p>
-                            </>
-                        ) : (
-                            <>
-                                {userNav.map((item) => (
-                                    <NavLink key={item.name} to={item.to} className="dropdown-item">
-                                        {item.name}
-                                    </NavLink>
-                                ))}
-                            </>
-                        )}
+                                    ))}
+                                </>
+                            )}
+                        </div>
                     </div>
                 </div>
             </nav>

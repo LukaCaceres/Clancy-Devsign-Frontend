@@ -4,6 +4,7 @@ import LoginPage from './pages/LoginPage'
 import RegistroPage from './pages/RegistroPage';
 import Error404Page from './pages/Error404Page';
 import NavbarComponent from './components/NavbarComponent';
+import FooterComponent from './components/FooterComponent';
 // import SearchResults from './pages/SearchResults';
 
 
@@ -32,7 +33,7 @@ function App() {
                 </main>
 
                 <footer className='overflow-x-hidden'>
-
+                    <FooterComponent/>
                 </footer>
             </Router>
         </>
