@@ -5,7 +5,8 @@ import RegistroPage from './pages/RegistroPage';
 import Error404Page from './pages/Error404Page';
 import NavbarComponent from './components/NavbarComponent';
 import FooterComponent from './components/FooterComponent';
-// import SearchResults from './pages/SearchResults';
+import ResultadosPage from './pages/ResultadosPage';
+
 
 
 
@@ -24,7 +25,8 @@ function App() {
                     <Routes>
                         <Route path="/login" element={<LoginPage />} />
                         <Route path='/registro' element={<RegistroPage />} />           
-                        {/* <Route path='/resultados' element={<SearchResults/>} /> */}
+                        <Route path='/resultados' element={<ResultadosPage/>} />
+                        {/* <Route path='/resultados' element={<SearchResults/>} /> */} 
                         {/* <Route path="/" element={<Home />} />
                         <Route path="/about" element={<About />} />
                         <Route path="/contact" element={<Contact />} /> */}
