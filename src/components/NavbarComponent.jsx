@@ -29,18 +29,14 @@ const NavbarComponent = () => {
     const [favoritosCount, setFavoritosCount] = useState(0);
     const [carritoCount, setCarritoCount] = useState(0);
     const [searchTerm, setSearchTerm] = useState('');
-    const [searchResults, setSearchResults] = useState([]);
     const [burgerVisibility, setBurgerVisibility] = useState(false)
     const dropdownRef = useRef(null);
     const location = useLocation();
 
+    //Dropdown Desktop
     const toggleDropdown = () => {
         setVisibility(prev => !prev);
     };
-
-    const toggleHamburger = () => {
-        setBurgerVisibility(prev => !prev);
-    }
 
     useEffect(() => {
         setVisibility(false);
@@ -60,6 +56,13 @@ const NavbarComponent = () => {
         };
     }, [dropdownRef]);
 
+    //Dropdown Mobile
+    const toggleHamburger = () => {
+        setBurgerVisibility(prev => !prev);
+    }
+
+
+    //obtener favoritos y carrito de un usuario
     useEffect(() => {
         const fetchFavoritos = async () => {
             try {
@@ -94,23 +97,15 @@ const NavbarComponent = () => {
         fetchCarrito();
     }, [token]);
 
-
+    //Busqueda
     const handleSearchChange = (e) => {
         setSearchTerm(e.target.value);
     };
 
-
     const handleSearchSubmit = async (e) => {
         e.preventDefault();
         if (searchTerm.trim()) {
-            try {
-                const response = await fetch(`https://clancydevsign-backend.onrender.com/api/producto?query=${searchTerm}`);
-                const data = await response.json();
-                setSearchResults(data.productos);
-                localStorage.setItem('search-results', searchResults);
-            } catch (error) {
-                console.error("Error al buscar productos:", error);
-            }
+            navigate(`/resultados?query=${searchTerm}`);
         }
     };
 
@@ -274,9 +269,6 @@ const NavbarComponent = () => {
                         )}
                     </div>
                 </div>
-
-
-                {searchResults.length > 0 && navigate('/resultados')}
             </nav>
         </>
     );
