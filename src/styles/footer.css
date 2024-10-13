@@ -1,0 +1,36 @@
+.footer-container{
+    background-color: var(--color-primary);
+    height: 10rem;
+    overflow: hidden;
+}
+
+.logo-clancy-footer{
+    height: 8rem;
+    width: auto;
+}
+
+.footer-container h4{
+    text-decoration: underline !important;
+    text-underline-offset: .2rem !important;
+}
+
+@media(min-width:1024px){
+    .redes-conocenos-container{
+        width: 40%;
+    }
+    
+    .copy-qr-container{
+        width: 30%;
+    }
+    .logo-container-footer{
+        width: 30%;
+    }
+}
+
+@media(max-width:1200px){
+    .logo-clancy-footer{
+        height: 6rem;
+    }
+}
+
+
